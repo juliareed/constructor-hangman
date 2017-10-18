@@ -1,5 +1,5 @@
-// this file will randomly select a word for the player
+// 'game.js' will randomly select a word for the player
 exports.game = {
 
-wordBank: ["REDSOX", "WHITESOX", "INDIANS", "TIGERS", "ASTROS", "ROYALS", "ANGELS", "TWINS", "YANKEES", "ATHLETICS", "MARINERS", "RAYS", "RANGERS", "BLUEJAYS", "NATIONALS", "CARDINALS", "GIANTS", "PADRES", "PIRATES", "PHILLIES", "METS", "BREWERS", "MARLINS", "DODGERS", "ROCKIES", "REDS", "CUBS", "BRAVES", "DIAMONDBACKS"],
+wordBank: [["redsox", "whitesox", "indians", "tigers", "astros", "royals", "angels", "twins", "yankees", "athletics", "mariners", "rays", "rangers", "bluejays", "nationals", "cardinals", "giants", "padres", "pirates", "phillies", "mets", "brewers", "marlins", "dodgers", "rockies", "reds", "cubs", "braves", "diamondbacks"],
 };

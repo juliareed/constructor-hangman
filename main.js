@@ -2,18 +2,21 @@
 var Word = require('./word.js');
 var prompt = require('prompt');
 
+// log directions
 console.log("🤗 Welcome to Baseball Hangman! 🤔");
-console.log("⚾️ Guess a letter to determine the random MLB team ⚾️");
+console.log("⚾️ Guess a lowercase letter to determine the random MLB team ⚾️");
 console.log("-----------------------------");
+// run prompt
 prompt.start();
 
-
+// game object
 game = {
- 	wordBank: ["REDSOX", "WHITESOX", "INDIANS", "TIGERS", "ASTROS", "ROYALS", "ANGELS", "TWINS", "YANKEES", "ATHLETICS", "MARINERS", "RAYS", "RANGERS", "BLUEJAYS", "NATIONALS", "CARDINALS", "GIANTS", "PADRES", "PIRATES", "PHILLIES", "METS", "BREWERS", "MARLINS", "DODGERS", "ROCKIES", "REDS", "CUBS", "BRAVES", "DIAMONDBACKS"],
+ 	wordBank: ["redsox", "whitesox", "indians", "tigers", "astros", "royals", "angels", "twins", "yankees", "athletics", "mariners", "rays", "rangers", "bluejays", "nationals", "cardinals", "giants", "padres", "pirates", "phillies", "mets", "brewers", "marlins", "dodgers", "rockies", "reds", "cubs", "braves", "diamondbacks"],
  	wordsWon: 0,
  	guessesRemaining: 10,
  	currentWord: null,
  	
+ 	// resets game, 
  	startGame: function (wrd) {
  		this.resetGuesses();
  		this.currentWord = new Word(this.wordBank[Math.floor(Math.random()* this.wordBank.length)]);
@@ -21,10 +24,12 @@ game = {
  		this.promptUser();
  	},
 
+ 	// resets guess count to 10
  	resetGuesses: function(){
  		this.guessesRemaining = 10;
  	},
 
+ 	// checks guessed letters, responds with console.log message
  	promptUser: function(){
  		var self = this;
  		prompt.get(['guessLetter'], function(err, result){
@@ -43,7 +48,7 @@ game = {
  						return;
  					}
  			}
-
+ 			// notifies guesses left
  			console.log("Guesses left: " + self.guessesRemaining);
  			console.log("-------------------");
  			if((self.guessesRemaining > 0) && (self.currentWord.found == false)){
@@ -60,5 +65,5 @@ game = {
 
 
 };
-
+// runs start game function
 game.startGame();
