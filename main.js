@@ -37,13 +37,13 @@ game = {
  			var manyGuessed = self.currentWord.checkLetter(result.guessLetter);
 
  			if(manyGuessed ==0) {
- 				console.log("nah");
+ 				console.log("NAH, TRY AGAIN.");
  				self.guessesRemaining--;
  				
  			} else {
- 				console.log("YASSSS");
+ 				console.log("YASSSS, QWEEN!");
  					if(self.currentWord.findWord()){
- 						console.log("Crushed it!");
+ 						console.log("YOU WON!");
  						console.log("-------------------");
  						return;
  					}
